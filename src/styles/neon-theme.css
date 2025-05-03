@@ -1,0 +1,16 @@
+/* Pulsing Neon Glow */
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 10px var(--neon-pink); }
+  }
+  
+  .neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-purple);
+    animation: pulse 2s infinite;
+  }
+  
+  .neon-border {
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink), inset 0 0 10px var(--neon-pink);
+  }

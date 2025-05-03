@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-pink: #ff00ff;
+  --neon-blue: #00ffff;
+  --neon-purple: #9d00ff;
+  --neon-green: #00ff88;
+  --dark-bg: #0a0a0a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-bg text-white overflow-x-hidden;
+    font-family: 'Rajdhani', sans-serif;
+  }
+}
+
+@layer components {
+  .neon-text {
+    @apply text-transparent bg-clip-text;
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-purple);
+    animation: pulse 2s infinite;
+  }
+  
+  .neon-border {
+    @apply border-2 border-neon-pink;
+    box-shadow: 0 0 10px var(--neon-pink), inset 0 0 10px var(--neon-pink);
+  }
+  
+  .neon-box {
+    @apply shadow-neon-md hover:shadow-neon-lg transition-all duration-300;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-blue); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
